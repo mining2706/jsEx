@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+		/*div id=time 에 시간 표기 위함*/
+        function viewDate() {
+            var now = new Date(); //날짜 객체
+            var display = now.toLocaleString(); //한국어 날짜 포맷
+            document.getElementById("time").innerHTML = display;
+            window.setTimeout("viewDate()", 1000); //타이머 설정
+        }
+		/*바탕화면 변경*/
+        function changeColor(color) {
+            //태그.style.속성=값
+            document.getElementById("target").style.backgroundColor
+                = color; //배경색상 변경
+        }
+
+        function changeText(color) {
+            //글자색상 변경
+            document.getElementById("target").style.color = color;
+        }
+    </script>
+</head>
+<!-- onload 페이지 로딩이 완료되면 -->
+<body onload="viewDate()" id="target">
+<h2>배경색상 변경</h2>
+<div id="time"></div>
+<input type="button" value="green"
+       onclick="changeColor('green');changeText('white')">
+<input type="button" value="yellow"
+       onclick="changeColor('yellow');changeText('#ff0000')">
+<input type="button" value="blue"
+       onclick="changeColor('blue');changeText('#ffff00')">
+</body>
+</html>

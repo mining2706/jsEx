@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../include/jquery-3.2.1.min.js"></script>
+<script>
+$(function(){
+	$("#search").keyup(function(){ //키이벤트
+		var search=$("#search").val(); //입력한 키워드
+		if(search.length == 0){ //글자수가 0이면
+			$("#div1").css("visibility","hidden"); //숨김
+		}else{ //글자수 > 0
+			$("#div1").css("visibility","visible"); //표시
+			$.ajax({
+				type: "post",
+				url: "result3.jsp",
+				data: "search="+search,
+				success:function(data){
+					$("#div1").html(data); //결과 출력
+				}
+			});
+		}
+	});
+	
+});
+
+function check(){
+//name으로 검색할 경우 계층구조를 적어주어야 함	
+	var search=document.form1.search.value;
+	//document.getElementsByName("search")[0];
+//id로 검색
+	//var search=$("#search").val();
+	if(search==""){
+		alert("키워드를 입력하세요");
+		document.form1.search.focus();
+		return;
+	}
+	document.form1.submit(); //폼 데이터를 서버로 전송
+}
+</script>
+</head>
+<body>
+<h2>일반적인 방식</h2>
+<form name="form1" method="post" action="result3.jsp">
+	키워드를 입력하세요
+	<input type="text" name="search">
+	<input type="button" value="확인" onclick="check()">
+</form>
+
+<h2>ajax 방식</h2>
+키워드를 입력하세요
+<input type="text" id="search">
+<div id="div1"></div>
+
+</body>
+</html>
+
+
+
+
+
+
+

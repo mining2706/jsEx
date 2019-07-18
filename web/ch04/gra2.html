@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="200"></canvas>
+<script>
+var canvas=document.getElementById("myCanvas");
+var context=canvas.getContext("2d");
+context.arc(70,50,10,0,2.0*Math.PI,false); //안쪽 원
+context.arc(80,60,120,0,2.0*Math.PI,false); //바깥 원
+context.stroke();
+//createRadialGradient(x1,y1,r1,x2,y2,r2)
+var gradient=context.createRadialGradient(70,50,10,80,60,120);
+gradient.addColorStop(0,"white");
+gradient.addColorStop(1,"red");
+context.fillStyle=gradient;
+context.fillRect(0,0,200,200);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

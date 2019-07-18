@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        function mouseIn(elem) {
+        	console.log(elem);
+            elem.style.border = "2px solid red";
+            elem.style.fontSize = "30px";
+            elem.style.backgroundColor = "yellow";
+        }
+
+        function mouseOut(elem) {
+			console.log(elem);
+            elem.style.border = "";
+            elem.style.fontSize = "12px";
+            elem.style.backgroundColor = "blue";
+        }
+    </script>
+</head>
+<body>
+<!--this 현재 태그  : div-->
+<div style="background-color: yellow; width:200px;"
+     onmouseover="mouseIn(this)"
+     onmouseout="mouseOut(this)">마우스 이벤트
+</div>
+</body>
+</html>

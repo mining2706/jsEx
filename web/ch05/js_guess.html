@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+	var nGuesses = 0;
+	var computerNumber = 0;
+	/* 달러 => 선택자(selector) */
+	/* 선택자.이벤트함수( 콜백함수 ) */
+	// 자동 실행 코드
+	$(function() {
+		//Math.random() 0.0 <= x < 1.0 => 0.0 <= x < 100.0
+		//1~100 사이의 난수
+		computerNumber = Math.floor(Math.random() * 100) + 1;
+		console.log("랜덤:" + computerNumber);
+		// 태그.val( 값 ) 태그의 입력값을 변경시킴
+		$("#computerNumber").val(computerNumber);
+	});
+	function guess() {
+		var result = "";
+		var number = parseInt($("#user").val());
+		//document.getElementById("user").value);
+		nGuesses++;
+		if (number == computerNumber)
+			result = "성공입니다.";
+		else if (number < computerNumber)
+			result = "낮습니다";
+		else
+			result = "높습니다.";
+		//document.getElementById("result").value=result;
+		$("#result").val(result);
+		//document.getElementById("guesses").value=nGuesses;
+		$("#guesses").val(nGuesses);
+		return true;
+	}
+</script>
+</head>
+<body>
+	<h2>숫자 맞추기 게임</h2>
+	<form>
+		숫자 :
+		<input type="text" id="user" size="5">
+		<input type="button" value="확인" onclick="guess()">
+		추측횟수 :
+		<input type="text" id="guesses" size="5">
+		힌트 :
+		<input type="text" id="result" size="16">
+		정답 :
+		<input type="hidden" id="computerNumber" size="16">
+	</form>
+</body>
+</html>

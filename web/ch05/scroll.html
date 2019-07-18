@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../include/jquery-3.2.1.min.js"></script>
+<script>
+$(function(){
+	//배너의 현재 좌표값 
+	var currentPosition=parseInt($("#slidemenu").css("top"));
+	//스크롤 이벤트가 발생하면
+	$(window).scroll(function(){
+		//스크롤 좌표 저장
+		var position=$(window).scrollTop();
+		console.log("스크롤바의 좌표:"+position);
+		//스크롤 좌표로 배너 이동
+		$("#slidemenu").stop().animate(
+				{"top":position+currentPosition+"px"},1000);
+	});
+});
+</script>
+<style>
+#slidemenu {
+	background: #12cf3d; 
+	position:absolute;	 /* 절대좌표 */
+	width:200px;
+	top:50px;
+	right:10px; 
+}
+</style>
+</head>
+<body>
+<h3>슬라이드 메뉴</h3>
+<div id="text">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+<div id="slidemenu">
+	슬라이드 메뉴<br>
+	<img src="../images/tomato.jpg" width="200" height="200">
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

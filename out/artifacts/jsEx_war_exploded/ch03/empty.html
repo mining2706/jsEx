@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        function checkNotEmpty(field) {
+            if (field.value == "") { //빈값일 경우
+                alert("필드가 비었습니다.");
+                field.focus(); //입력포커스 이동
+                return false;
+            }
+            var s = field.value;
+            if (s.length >= 6 && s.length <= 8) {
+                return true;
+            } else {
+                alert("이름은 6~8자 이내로 입력하세요");
+                field.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+<form action="result.jsp" name="form1">
+    이름 : <input type="text" id="user">
+    <input type="button"
+           onclick="if(checkNotEmpty(document.getElementById('user')))
+	document.form1.submit();"
+           value="확인">
+</form>
+</body>
+</html>

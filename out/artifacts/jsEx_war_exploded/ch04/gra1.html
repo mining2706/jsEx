@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="200"></canvas>
+<script>
+var canvas=document.getElementById("myCanvas");
+var context=canvas.getContext("2d");
+//createLinearGradient(x1,y1,x2,y2) 선형 효과
+var gradient=context.createLinearGradient(0,0,200,0);
+gradient.addColorStop(0,"yellow");
+gradient.addColorStop(0.4,"red");
+gradient.addColorStop(0.7,"green");
+gradient.addColorStop(1,"blue");
+context.fillStyle=gradient;
+context.fillRect(10,10,180,90);
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

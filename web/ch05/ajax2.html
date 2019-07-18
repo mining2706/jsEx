@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../include/jquery-3.2.1.min.js"></script>
+<script>
+//웹페이지가 로딩된 후 자동으로 실행되는 부분
+$(function(){
+	$("#btnLogin").click(function(){ //버튼 클릭
+		var userid=$("#userid").val(); //입력한 값
+		var passwd=$("#passwd").val();
+// result2.jsp?userid=kim&passwd=1234		
+		var param="userid="+userid+"&passwd="+passwd;//쿼리스트링
+		//백그라운드에서 실행되는 코드
+		$.ajax({
+			type: "post",
+			url: "result2.jsp",
+			data: param,
+			success: function(data){ //콜백함수(서버의 처리 완료 후)
+// responseText 응답텍스트
+// responseXML 응답XML
+				console.log(data);
+				$("#div1").html(data); //화면 갱신
+			}
+		});
+	});
+});
+
+
+function login(){
+	var userid=$("#userid").val(); // 태그에 입력된 값 저장
+	var passwd=$("#passwd").val();
+	if(userid==""){
+		alert("아이디를 입력하세요.");
+		$("#userid").focus(); //태그로 포커스 이동
+		return;
+	}
+	if(passwd==""){
+		alert("비밀번호를 입력하세요.");
+		$("#passwd").focus();
+		return;
+	}
+	document.form1.submit(); //폼 데이터를 서버로 전송
+}
+</script>
+</head>
+<body>
+<h2>일반적인 방식</h2>
+ <form name="form1" method="post" action="result2.jsp">
+아이디 : <input type="text" id="userid" name="userid"><br>
+비밀번호 : <input type="password" id="passwd" name="passwd">
+<br>
+<input type="button" value="확인" onclick="login()">
+</form> 
+
+<h2>ajax 방식</h2>
+아이디 : <input type="text" id="userid"><br>
+비밀번호 : <input type="password" id="passwd"><br>
+<input type="button" value="확인" id="btnLogin">
+<div id="div1"></div>
+
+</body>
+</html>
+
+
+
+
+
+
+

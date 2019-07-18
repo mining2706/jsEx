@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+<ul> <!-- Unordered List 순서없는 목록 -->
+    <!--<li><span>아이템1-1</span> <span>아이템1-2</span></li>-->
+    li>아이템2</li>
+    <li>아이템2</li><!-- List Item 목록의 요소 -->
+    <li>아이템3</li>
+    <li>아이템4</li>
+    <li>아이템5</li>
+</ul>
+<script>
+    // ul 배열로 인식함  해당 태그를 모두 찾음
+    var list = document.getElementsByTagName("ul")[0]; // 첫번째 태그
+    // ul 태그의 자식 태그 중에서 모든 li 태그들을 선택(배열로 저장됨)
+    var allItems = list.getElementsByTagName("li");
+    // firstChild : 첫번째 자식태그
+    for (i = 0; i < allItems.length; i++) { //배열의 사이즈
+        // firstChild.date 태그의 내용
+        alert(allItems[i].firstChild.data);
+        //alert(allItems[i].firstChild);
+    }
+</script>
+</body>
+</html>

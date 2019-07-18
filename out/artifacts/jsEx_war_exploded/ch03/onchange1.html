@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        function move() {
+            var url = document.getElementById("url").value;
+            if (url != "") { //빈값이 아니면 이동
+                location.href = url;
+            } else {
+                alert("사이트를 선택하세요.");
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>사이트를 선택하세요</h1>
+<!-- size="펼침목록갯수" -->
+<!--select 박스의 값이 변경될때 마다 발생되는 이벤트가 onchange 이다.-->
+<select id="url" onchange="move()" > <!--size="4" 추가하면 다 열려있다.-->
+    <option value="">선택하세요</option>
+    <option value="http://naver.com">네이버</option>
+    <option value="http://daum.net">다음</option>
+    <option value="http://nate.com">네이트</option>
+    <option value="http://google.com">구글</option>
+</select>
+<input type="button" onclick="move()" value="확인">
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- WebContent/include 디렉토리에 있는 js 파일 참조 -->
+<script src="../include/jquery-3.2.1.min.js"></script>
+<!-- jquery 사이트의 파일을 링크시키는 방법 -->
+<!-- <script src="http://code.jquery.com/jquery-3.2.1.min.js">
+</script> -->
+<script>
+//페이지가 로딩되면 자동으로 실행되는 코드
+// $ => jQuery,  $() 선택자
+// $().이벤트함수();
+// $(document).ready(function(){}); //정식 표현
+// $( function(){} ); //약식 표현
+$(function(){
+	//h2 태그를 클릭하면 
+	$("h2").click(function(){
+		//클릭한 태그를 숨김
+		$(this).hide();
+	});
+});
+</script>
+</head>
+<body>
+<h2>첫번째 h2</h2>
+<h2>두번째 h2</h2>
+<h2>세번째 h2</h2>
+</body>
+</html>
+
+
+
+
+
+
+

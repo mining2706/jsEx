@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<body>
+<h1 id="title">마우스 이벤트</h1>
+<!--href="#" null link : 다른 페이지로 이동하는 기능을 막음-->
+<a href="#" id="btn"><img src="../images/btn_out.gif" alt="버튼"></a>
+<p id="img_src"></p>
+<script>
+    var btn = document.getElementById("btn"); //a태그
+    var s = document.getElementById("img_src"); //p태그
+    //자바스크립트 코드로 이벤트 등록 : 무명함수
+    btn.onmouseover = function () {
+        document.getElementById("title").innerHTML = "마우스 오버";
+        btn.firstChild.src = "../images/btn_over.gif";
+        s.innerHTML = btn.firstChild.src;
+    }
+    btn.onmouseout = function () {
+        document.getElementById("title").innerHTML = "마우스 아웃";
+        btn.firstChild.src = "../images/btn_out.gif";
+        s.innerHTML = btn.firstChild.src;
+    }
+</script>
+</body>
+</html>

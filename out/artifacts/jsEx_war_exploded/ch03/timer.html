@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        var timer; //전역변수
+        function test() {
+            //alert("test 함수 호출");
+            //F12 개발자도구의 콘솔창에 출력
+            console.log("test 함수 호출");
+            timer = setTimeout("test()", 1000);
+        }
+
+        function showAlert() {
+            //setTimeout() 1회용, setInterval() 반복호출
+            timer = setTimeout("test()", 1000); //1초 후 test() 실행
+            //timer=setInterval("test()",1000); //1초마다 test() 실행
+        }
+
+        function stopAlert() {
+            clearTimeout(timer); //타이머를 해제함
+            //clearInterval(timer);
+        }
+    </script>
+</head>
+<body>
+<p>버튼을 누르세요</p>
+<button onclick="showAlert()">타이머 시작</button>
+<button onclick="stopAlert()">타이머 멈춤</button>
+</body>
+</html>
+
+
+
+
+
+
+

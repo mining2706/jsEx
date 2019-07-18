@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function enter(){
+	//사용자가 입력한 키코드값이 13이면(엔터키이면)
+//F12(개발자 콘솔)에 출력됨	
+	console.log(window.event.keyCode);
+	if(window.event.keyCode == 13){
+		gugu();
+	}
+}
+
+function gugu(){
+	//id가 dan인 태그에 입력된 값
+	var dan=document.getElementById("dan").value;
+	var str="";
+	for(i=1; i<9; i++){
+		str += dan+"x"+i+"="+dan*i+"<br>";
+	}
+	//id가 result인 태그의 내부영역에 결과 출력(html로 출력)
+	document.getElementById("result").innerHTML=str;
+	//id가 result인 태그의 내부영역에 결과 출력(텍스트로 출력)
+	//document.getElementById("result").innerText=str;
+}
+</script>
+</head>
+<body>
+단을 입력하세요.
+
+<input type="text" id="dan" value="3" size="5" 
+	onkeyup="enter()">
+<!-- 버튼을 클릭하면 자바스크립트 gugu() 함수를 실행함 -->
+<input type="button" value="확인" onclick="gugu()">
+<div id="result">
+
+
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+

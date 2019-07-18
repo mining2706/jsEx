@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+str = "자바 프로그램, Like father, like son.";
+//  /검색키워드/검색옵션
+result = str.match(/Like/ig); // i 대소문자 무시, g 전역검색 
+document.write(result+"<br>");
+result=str.replace("자바","java"); //replace(A,B) A를 B로 변환
+document.write(result+"<br>");
+str="one two three four five";
+array = str.split(" "); //split("구분자") 문자열 분리
+for(var s in array)
+	document.write(array[s]+"<br>");
+	//document.write(s+"<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+

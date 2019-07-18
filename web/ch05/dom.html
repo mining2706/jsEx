@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../include/jquery-3.2.1.min.js"></script>
+<script>
+//선택자.text()  태그 내부의 내용을 텍스트로 처리
+//선택자.html()  태그 내부의 내용을 html로 해석
+$(function(){
+	$("#text").click(function(){
+	 //document.getElementById("target").innerText("<marquee>변경된 내용입니다.</marquee>");
+	 $("#target").text("<marquee>변경된 내용입니다.</marquee>");
+	 alert($("#target").text());
+	});
+	$("#html").click(function(){
+	 //document.getElementById("target").innerHTML("<marquee>변경된 내용입니다.</marquee>");		
+	 $("#target").html("<marquee>변경된 내용입니다.</marquee>");
+	 alert($("#target").html());
+	});
+});
+
+</script>
+</head>
+<body>
+<h2>DOM 변경</h2>
+<p id="target">
+	이것은 <strong>하나의</strong> 단락입니다.
+</p>
+<button id="text">버튼1</button>
+<button id="html">버튼2</button>
+</body>
+</html>
+
+
+
+
+
+
+

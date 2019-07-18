@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function greeting(name,position){
+	alert(name+" "+position+"님 안녕하세요?");
+}
+function greeting2(){
+//document.getElementById("태그의 id")	
+	var name=document.getElementById("name").value;
+	var position=document.getElementById("position").value;
+	if(name==""){ //빈값이면
+		alert("이름을 입력하세요.");
+		document.getElementById("name").focus(); //입력커서 이동
+		return; //함수 종료
+	}
+	if(position==""){
+		alert("직급을 입력하세요.");
+		document.getElementById("position").focus();
+		return;
+	}	
+	var str=name+" "+position+"님 안녕하세요";
+	alert(str);
+	//id가 form1인 폼에 입력된 데이터를 서버로 제출
+	document.getElementById("form1").submit();
+}
+</script>
+</head>
+<body>
+<!-- 자바스크립트 함수 호출 -->
+<button onclick="greeting('김철수','부장')">클릭하세요</button>
+
+<!-- id : 중복 불가능
+name : 중복 가능, jsp에서 참조 -->
+<form id="form1" method="post" action="func_result.jsp">
+이름 : <input type="text" id="name" name="name"><br>
+직급 : <input type="text" id="position" name="position"><br>
+<button type="button" onclick="greeting2()">확인</button>
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

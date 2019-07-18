@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../include/jquery-3.2.1.min.js"></script>
+<script>
+$(function(){
+	// 선택자.bind({이벤트:함수, 이벤트:함수})
+	$("img").click(function(){
+		$("img").attr("src","../images/i0075.gif");
+	});
+	$("img").mouseover(function(){
+		$("img").attr("src","../images/i0076.gif");
+	});
+	$("img").mouseout(function(){
+		$("img").attr("src","../images/i0073.gif");
+	});
+/* 	$("img").bind({
+		click: function(){
+			//선택자.attr("속성","값")
+			// <img src='../images/i0075.gif'>
+			$("img").attr("src","../images/i0075.gif");
+		},
+		mouseover: function(){
+			$("img").attr("src","../images/i0076.gif");
+		},
+		mouseout: function(){
+			$("img").attr("src","../images/i0073.gif");
+		}
+	}); */
+});
+</script>
+</head>
+<body>
+<img src="../images/i0075.gif">
+</body>
+</html>
+
+
+
+
+
+
+

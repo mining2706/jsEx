@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        function replace() {
+            // 아래 2가지 방법이 존재함
+            //location.href="http://google.com"; //속성
+            location.replace("http://google.com"); //함수
+        }
+    </script>
+</head>
+<body>
+<!--하이러링크의 기본 기능을 막고 자바스크립트 함수를 호출함.-->
+<a href="#" onclick="replace()">이동</a>
+<!--버튼으로 이동할 경우-->
+<button onclick="replace()">이동</button>
+</body>
+</html>
+
+
+
+
+
+
+

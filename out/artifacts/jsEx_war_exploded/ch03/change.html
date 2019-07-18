@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script>
+        function get() {
+            //id가 ex인 태그의 내용을 html로 가져옴
+            //var val=document.getElementById("ex").innerHTML;
+            //id가 ex인 태그의 내용을 text로 가져옴
+            var val = document.getElementById("ex").innerText;
+            alert(val);
+        }
+
+        function set(v) {
+        	// innerHTML 영역변경
+            document.getElementById("ex").innerHTML = v;
+        }
+
+        function changeImage() {
+            var img = document.getElementById("image");
+            // 이미지태그.src = "이미지파일이름";
+            img.src = "../images/tangerines.jpg"; //이미지 변경
+            img.style.width = "50px"; //이미지의 가로 사이즈 변경
+            img.style.height = "50px"; //이미지의 세로 사이즈 변경
+        }
+
+        function changeStyle() {
+            var ex = document.getElementById("ex");
+            ex.style.color = "red"; // 태그.style.속성=값
+            ex.style.backgroundColor = "yellow";
+            ex.style.fontSize = "30px";
+            ex.style.fontFamily = "궁서체";
+            ex.style.fontStyle = "italic";
+        }
+
+        function show() {
+//	document.getElementById("image").style.visibility="visible";
+            document.getElementById("image").style.display = "block";
+        }
+
+        function hide() {
+            //자리차지
+//	document.getElementById("image").style.visibility="hidden";
+            //자리없음
+            document.getElementById("image").style.display = "none";
+        }
+    </script>
+    <style>
+        /* id가 ex인 태그의 스타일 정의 */
+        #ex {
+            background-color: blue;
+            font-family: "굴림체";
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<div id="ex">div 영역</div>
+<a href="#" onclick="get()">div의 내용</a>
+<a href="#" onclick="set('변경되었습니다.')">div 변경</a>
+<br>
+<img id="image" src="../images/tomato.jpg">
+<input type="button" value="이미지 변경"
+       onclick="changeImage()">
+<input type="button" value="이미지 숨김" onclick="hide()">
+<input type="button" value="이미지 표시" onclick="show()">
+<br>
+<input type="button" value="스타일 변경"
+       onclick="changeStyle()">
+</body>
+</html>

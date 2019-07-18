@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function calc(){
+//document : 자바스크립트의 내장객체, 웹페이지의 문서 객체	
+//document.getElementById("태그의id")   	
+	var x=document.getElementById("x").value;//태그에 입력한 값
+	var y=document.getElementById("y").value;
+	var sum;
+	//sum=x+y;
+	sum=parseInt(x)+parseInt(y);
+// string + string => 연결
+// number + number => 덧셈
+	document.getElementById("sum").value = sum;
+}
+</script>
+</head>
+<body>
+
+<form name="myform" method="post">
+첫번째 정수 : <input type="text" id="x" value="100"><br>
+두번째 정수 : <input type="text" id="y"><br>
+합계 : <input id="sum"><br>
+<!-- 버튼을 누르면 자바스크립트 calc() 함수 호출 -->
+<input type="button" value="계산" onclick="calc()">
+<!-- <button type="button">계산</button> -->
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
